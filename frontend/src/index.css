@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #1B5E20;
+  --color-botanical: #2E7D32;
+  --color-leaf: #4CAF50;
+  --color-leaf-light: #E8F5E9;
+  --color-river: #0288D1;
+  --color-river-dark: #01579B;
+  --color-water: #E0F7FA;
+  --color-orchid: #EC407A;
+  --color-orchid-light: #FCE4EC;
+  --color-sun: #FBC02D;
+  --color-sun-light: #FFF9C4;
+  --color-cream: #F8FAFC;
+  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-cursive: 'Great Vibes', cursive;
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes bird-flutter {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.1) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05) rotate(4deg);
+  }
+  75% {
+    transform: translateY(-12px) scale(1.15) rotate(-3deg);
+  }
+}
+
+@keyframes river-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+.animate-colibri {
+  animation: bird-flutter 1.2s ease-in-out infinite;
+}
+
+.animate-river {
+  background-size: 200% 200%;
+  animation: river-flow 8s ease infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2E7D32;
+}
+
