@@ -24,7 +24,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ hike, isOpen
 - Número de personas: ${travelers}
 - Notas: ${notes || 'Ninguna'}
 ¿Tienen disponibilidad y detalles de pago?`;
-    const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/573115401534?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     onClose();
   };

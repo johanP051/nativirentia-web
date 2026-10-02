@@ -6,6 +6,7 @@ import type { Hike } from '../data/hikes';
 import { PlantCard } from '../components/common/PlantCard';
 import { HikeCard } from '../components/common/HikeCard';
 import { ReservationModal } from '../components/common/ReservationModal';
+import { AnimatedNativirentiaLogo } from '../components/common/Logo';
 import { ColombiaMap } from '../components/common/ColombiaMap';
 import { Sprout, Footprints, Heart, BookOpen, ShieldCheck, ArrowRight } from 'lucide-react';
 
@@ -44,22 +45,16 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12 pb-20">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 pb-16">
+          <AnimatedNativirentiaLogo className="mx-auto mb-5" />
+
           {/* Animated Colibrí & Eco Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium mb-6 animate-pulse">
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
             <span>Plataforma Oficial de Ecoturismo y Botánica Nativa</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none mb-6">
-            NATI<span className="text-[#0288D1]">-</span>VIRENTIA
-          </h1>
-
-          <p className="font-cursive text-3xl sm:text-5xl text-emerald-300 mb-6 drop-shadow-md">
-            “Donde el alma conecta y la mente aprende”
-          </p>
-
-          <p className="text-base sm:text-xl text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+          <p className="text-base sm:text-xl text-slate-100 max-w-2xl mx-auto mb-9 leading-relaxed font-light drop-shadow-md">
             Descubre las especies vegetales que dan vida a Colombia. Conecta tus sentidos con los páramos y bosques andinos a través de experiencias de ecoturismo consciente.
           </p>
 

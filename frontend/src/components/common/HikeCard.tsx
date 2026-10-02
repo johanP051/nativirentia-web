@@ -108,7 +108,7 @@ export const HikeCard: React.FC<HikeCardProps> = ({ hike, onOpenReservation }) =
 
           <button
             type="button"
-            onClick={() => onOpenReservation ? onOpenReservation(hike) : window.open(`https://wa.me/573000000000?text=${encodeURIComponent(hike.whatsappMessage)}`, '_blank')}
+            onClick={() => onOpenReservation ? onOpenReservation(hike) : window.open(`https://wa.me/573115401534?text=${encodeURIComponent(hike.whatsappMessage)}`, '_blank')}
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-[#1B5E20] hover:bg-[#2E7D32] transition-colors shadow-2xs cursor-pointer"
           >
             <MessageCircle className="w-3.5 h-3.5" />

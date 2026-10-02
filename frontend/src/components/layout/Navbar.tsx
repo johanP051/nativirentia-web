@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
         {/* Right CTA */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="https://wa.me/573000000000?text=Hola%20Nativirentia,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20caminatas%20ecol%C3%B3gicas."
+            href="https://wa.me/573115401534?text=Hola%20Nativirentia,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20caminatas%20ecol%C3%B3gicas."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold bg-emerald-50 text-[#1B5E20] hover:bg-emerald-100 transition-colors border border-emerald-200"
