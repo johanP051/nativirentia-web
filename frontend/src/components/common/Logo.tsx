@@ -16,12 +16,12 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <Link to="/" className={`inline-flex items-center gap-3 group transition-transform duration-300 hover:opacity-95 ${className}`}>
-      {/* Imagotipo / Logo icon with colibrí animation */}
-      <div className="relative w-11 h-11 rounded-full overflow-hidden shadow-sm border border-emerald-100 flex-shrink-0 bg-[#E8F5E9] flex items-center justify-center group-hover:scale-105 transition-transform">
-        <img 
-          src="/assets/Nativirentia_Documento_Completo_Web_e_Identidad_image1.jpeg" 
-          alt="Nativirentia Logo Colibrí y Montañas" 
-          className="w-full h-full object-cover animate-colibri group-hover:rotate-3 transition-transform"
+      <div className="nativirentia-mark group-hover:scale-105 transition-transform" aria-hidden="true">
+        {/* Clean base emblem in navbar - static and crisp, no overlay bird */}
+        <img
+          src="/assets/logo/nativirentia_emblem.svg"
+          alt="Nativirentia"
+          className="nativirentia-mark__original"
         />
       </div>
 
@@ -42,3 +42,25 @@ export const Logo: React.FC<LogoProps> = ({
     </Link>
   );
 };
+
+export const AnimatedNativirentiaLogo: React.FC<{ className?: string }> = ({ className = '' }) => (
+  <div className={`relative max-w-sm sm:max-w-md mx-auto ${className}`} aria-label="Nativirentia: Donde el alma conecta y la mente aprende">
+    {/* Base crisp SVG emblem card */}
+    <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-[#F3EFE3]">
+      <img
+        src="/assets/logo/nativirentia_emblem.svg"
+        alt="Nati-Virentia. Donde el alma conecta y la mente aprende"
+        className="w-full h-auto block"
+      />
+    </div>
+
+    {/* Autonomous animated hummingbird flying on the right side without covering the emblem */}
+    <div className="absolute -top-6 -right-10 sm:-right-16 w-24 sm:w-32 h-24 sm:h-32 z-20 pointer-events-none filter drop-shadow-lg animate-hero-flight">
+      <img
+        src="/assets/svg_layers/hummingbird_cropped.svg"
+        alt=""
+        className="w-full h-full object-contain"
+      />
+    </div>
+  </div>
+);

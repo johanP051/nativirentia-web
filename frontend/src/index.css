@@ -66,6 +66,141 @@
   animation: river-flow 8s ease infinite;
 }
 
+/* Layered Nativirentia mark: light, decorative motion without external libraries. */
+.nativirentia-mark {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 3rem;
+  overflow: hidden;
+  border: 1px solid #d8ead8;
+  border-radius: 1rem;
+  background: #f3efe3;
+  box-shadow: 0 8px 18px rgb(27 94 32 / 0.12);
+  isolation: isolate;
+}
+
+.nativirentia-mark__original {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nativirentia-hero-logo {
+  position: relative;
+  width: min(76vw, 390px);
+  isolation: isolate;
+}
+
+.nativirentia-hero-logo__image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 24px 70px rgb(1 18 35 / 0.48), 0 0 0 1px rgb(255 255 255 / .38);
+}
+
+.nativirentia-hero-logo__wingbeat {
+  position: absolute;
+  top: 8%;
+  left: 49%;
+  z-index: 2;
+  width: 23%;
+  height: 23%;
+  border-top: 2px solid rgb(197 255 226 / .7);
+  border-left: 2px solid rgb(197 255 226 / .35);
+  border-radius: 85% 12% 70% 12%;
+  filter: drop-shadow(0 0 5px rgb(72 255 189 / .45));
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(-31deg) scale(.72);
+  transform-origin: 92% 84%;
+  animation: hero-wingbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-wingbeat {
+  0%, 100% { opacity: 0; transform: rotate(-31deg) scale(.72); }
+  32% { opacity: .8; transform: rotate(-37deg) scale(1); }
+  58% { opacity: .15; transform: rotate(-43deg) scale(1.08); }
+}
+
+@keyframes hero-hummingbird-flight {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(-4px, -10px) rotate(-3deg) scale(1.04);
+  }
+  50% {
+    transform: translate(6px, -6px) rotate(2deg) scale(1.02);
+  }
+  75% {
+    transform: translate(2px, -14px) rotate(-1deg) scale(1.06);
+  }
+}
+
+.animate-hero-flight {
+  animation: hero-hummingbird-flight 2.4s ease-in-out infinite;
+}
+
+.nativirentia-mark__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.nativirentia-mark__background { z-index: 1; }
+.nativirentia-mark__vegetation {
+  z-index: 2;
+  animation: vegetation-sway 5s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+.nativirentia-mark__river {
+  z-index: 3;
+  animation: river-breathe 5s ease-in-out infinite;
+}
+.nativirentia-mark__hummingbird {
+  z-index: 4;
+  animation: hummingbird-hover 3.2s ease-in-out infinite;
+  transform-origin: 52% 52%;
+}
+
+@keyframes vegetation-sway {
+  0%, 100% { transform: scale(1.02) rotate(-1deg); }
+  50% { transform: scale(1.04) rotate(1.5deg); }
+}
+
+@keyframes river-breathe {
+  0%, 100% { transform: translateX(-1%) scale(1.02, 1); opacity: .92; }
+  50% { transform: translateX(2%) scale(1.06, 1.03); opacity: 1; }
+}
+
+@keyframes hummingbird-hover {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  35% { transform: translate(2%, -3%) rotate(-1deg); }
+  70% { transform: translate(-2%, 2%) rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nativirentia-mark__vegetation,
+  .nativirentia-mark__river,
+  .nativirentia-mark__hummingbird,
+  .animate-float,
+  .animate-colibri,
+  .animate-river,
+  .nativirentia-hero-logo__wingbeat {
+    animation: none;
+  }
+
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -80,4 +215,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #2E7D32;
 }
-
